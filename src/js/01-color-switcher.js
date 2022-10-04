@@ -3,20 +3,21 @@ const stopBtnRef = document.querySelector('button[data-stop]');
 const bodyRef = document.querySelector('body');
 
 const colorSwitcher = {
+  timerId: null,
   isActive: false,
   startSwitch() {
     if (this.isActive) {
       return;
     }
     this.isActive = true;
-    timerId = setInterval(() => {
+    this.timerId = setInterval(() => {
       let color = getRandomHexColor();
       bodyRef.style.backgroundColor = color;
     }, 1000);
   },
 
   stopSwitch() {
-    clearInterval(timerId);
+    clearInterval(this.timerId);
     this.isActive = false;
   },
 };
