@@ -49,7 +49,6 @@ function onClick() {
     calculateTimerValue();
     stopTimerIf();
   }, 1000);
-  console.log(timerId);
 }
 
 function calculateTimerValue() {
