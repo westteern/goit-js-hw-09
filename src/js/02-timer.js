@@ -46,12 +46,12 @@ function onClick() {
   timerId = setInterval(() => {
     startTime = new Date().getTime();
     leftTime = finalTime - startTime;
-    calculateTimerValue();
+    formingTimerValue();
     stopTimerIf();
   }, 1000);
 }
 
-function calculateTimerValue() {
+function formingTimerValue() {
   daysValRef.textContent = Math.floor(leftTime / 1000 / 60 / 60 / 24)
     .toString()
     .padStart(2, '0');
