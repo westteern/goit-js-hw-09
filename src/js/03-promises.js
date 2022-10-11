@@ -10,7 +10,7 @@ const submitBtnRef = document.querySelector('button');
 const inputsValue = {};
 
 formRef.addEventListener('input', onInput);
-submitBtnRef.addEventListener('click', onSubmit);
+formRef.addEventListener('submit', onSubmit);
 
 function onInput(e) {
   if (Number(e.target.value) < 0) {
@@ -46,6 +46,7 @@ function onSubmit(e) {
     inputsValue.positon += 1;
     submitDelay += inputsValue.step;
   }
+  e.currentTarget.reset();
 }
 
 function createPromise(position, delay) {
@@ -75,3 +76,7 @@ function createPromise(position, delay) {
       );
     });
 }
+
+// function defaultInput() {
+//   e.currentTarget.reset();
+// }
