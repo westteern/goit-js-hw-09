@@ -5,7 +5,6 @@ const changeSettings = Notify.init({
 });
 
 const formRef = document.querySelector('.form');
-const submitBtnRef = document.querySelector('button');
 
 const inputsValue = {};
 
@@ -76,7 +75,3 @@ function createPromise(position, delay) {
       );
     });
 }
-
-// function defaultInput() {
-//   e.currentTarget.reset();
-// }
