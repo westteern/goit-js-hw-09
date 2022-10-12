@@ -45,7 +45,6 @@ function onSubmit(e) {
     inputsValue.positon += 1;
     submitDelay += inputsValue.step;
   }
-  e.currentTarget.reset();
 }
 
 function createPromise(position, delay) {
@@ -73,5 +72,6 @@ function createPromise(position, delay) {
         () => Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`),
         delay
       );
-    });
+    })
+    .finally(() => formRef.reset());
 }
